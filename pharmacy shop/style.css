@@ -1,0 +1,165 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: #007bff;
+  color: white;
+}
+
+.logo {
+  font-size: 44px;
+  font-weight: bold;
+}
+
+.cart {
+  position: relative;
+}
+
+.cart img {
+  width: 48px;
+  height: 48px;
+}
+
+#cart-count {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: red;
+  color: white;
+  font-size: 12px;
+  padding: 2px 6px;
+  border-radius: 50%;
+}
+
+/* Search Section */
+.search-section {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  background-color: #fff;
+}
+
+#searchInput {
+  width: 80%;
+  max-width: 500px;
+  padding: 10px 15px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+/* Categories */
+.categories {
+  padding: 30px;
+  background-color: #f1f1f1;
+}
+
+.categories h2 {
+  margin-bottom: 15px;
+  font-size: 20px;
+}
+
+.category-list {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.category {
+  background-color: #fff;
+  padding: 12px 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.category:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+/* Featured Products */
+.featured-products {
+  padding: 30px;
+}
+
+.featured-products h2 {
+  margin-bottom: 15px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+/* Product Cards */
+.product-card {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.product-card button {
+  padding: 8px 15px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.product-card button:hover {
+  background-color: #0056b3;
+}
+
+.healthy-message {
+  background-color: #007bff;
+  height: 130px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.messege {
+  text-align: center;
+  font-size: 40px;
+  color: white;
+  letter-spacing: 7px;
+}
+
+.branding{
+    color: white;
+    font-size: 20px;
+    margin-left: 10px;
+}

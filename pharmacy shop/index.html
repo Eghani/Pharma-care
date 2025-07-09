@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Online Pharmacy Shop</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="logo">PharmaCare <i class="branding">(Ehteshamul Ghani)</i></div>
+        <div class="cart">
+            <img src="images/cart-icon.png" alt="Cart" />
+            <span id="cart-count">0</span>
+        </div>
+    </header>
+
+    <section class="search-section">
+        <input type="text" id="searchInput" placeholder="Search medicines..." />
+    </section>
+
+    <section class="categories">
+        <h2>Shop by Category</h2>
+        <div class="category-list">
+            <div class="category">OTC</div>
+            <div class="category">Pain Relief</div>
+            <div class="category">Skincare</div>
+            <div class="category">Vitamins</div>
+        </div>
+    </section>
+
+    <section class="featured-products">
+        <h2>Featured Products</h2>
+        <div class="product-grid" id="productGrid">
+        </div>
+    </section>
+    <div class="healthy-message">
+        <h2 class="messege">
+            <i>Keep a healthy life...</i>
+            <br>
+        </h2>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
