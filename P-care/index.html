@@ -6,44 +6,74 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Online Pharmacy Shop</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="cart.css" />
 </head>
 
 <body>
+
     <header class="navbar">
-        <div class="logo">PharmaCare <i class="branding">(Ehteshamul Ghani)</i></div>
-        <div class="cart">
+        <div class="logo">
+            <span class="logo-text">PharmaCare</span>
+            <span class="branding">by Ehteshamul Ghani</span>
+        </div>
+        <div class="cart" title="View Cart">
             <img src="images/cart-icon.png" alt="Cart" />
             <span id="cart-count">0</span>
         </div>
     </header>
 
-    <section class="search-section">
-        <input type="text" id="searchInput" placeholder="Search medicines..." />
-    </section>
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Welcome to PharmaCare</h1>
+                <p>Your trusted online pharmacy for health & wellness</p>
+                <div class="search-section">
+                    <input type="text" id="searchInput" placeholder="Search medicines, brands, or categories..." />
+                </div>
+            </div>
+        </section>
 
-    <section class="categories">
-        <h2>Shop by Category</h2>
-        <div class="category-list">
-            <div class="category">OTC</div>
-            <div class="category">Pain Relief</div>
-            <div class="category">Skincare</div>
-            <div class="category">Vitamins</div>
-        </div>
-    </section>
+        <section class="categories">
+            <h2>Shop by Category</h2>
+            <div class="category-list">
+                <div class="category"><span>💊</span> OTC</div>
+                <div class="category"><span>🤕</span> Pain Relief</div>
+                <div class="category"><span>🧴</span> Skincare</div>
+                <div class="category"><span>💪</span> Vitamins</div>
+            </div>
+        </section>
 
-    <section class="featured-products">
-        <h2>Featured Products</h2>
-        <div class="product-grid" id="productGrid">
+        <section class="featured-products">
+            <h2>Featured Products</h2>
+            <div class="product-grid" id="productGrid">
+                <!-- JS will populate products here -->
+            </div>
+        </section>
+
+        <section class="healthy-message">
+            <h2 class="message">
+                <i>Keep your life healthy with PharmaCare – Your wellness, our priority!</i>
+            </h2>
+        </section>
+    </main>
+
+
+    <footer class="footer">
+        <p>&copy; 2025 PharmaCare. All rights reserved.</p>
+    </footer>
+
+    <!-- Cart Modal -->
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-modal-header">
+            <h2>Your Cart</h2>
+            <button class="cart-modal-close" id="closeCartModal" title="Close">&times;</button>
         </div>
-    </section>
-    <div class="healthy-message">
-        <h2 class="messege">
-            <i>Keep a healthy life...</i>
-            <br>
-        </h2>
+        <div class="cart-items" id="cartItems"></div>
+        <div class="cart-modal-footer">
+            <div class="cart-total" id="cartTotal">Total: ₹0</div>
+        </div>
     </div>
 
     <script src="script.js"></script>
 </body>
-
 </html>

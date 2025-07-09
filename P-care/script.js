@@ -25,11 +25,10 @@ const products = [
   },
 ];
 
-
-// used gpt to ensure the smooth function in the website
-function displayProducts() {
+function displayProducts(filteredProducts = products) {
   const grid = document.getElementById("productGrid");
-  products.forEach((product) => {
+  grid.innerHTML = "";
+  filteredProducts.forEach((product) => {
     const card = document.createElement("div");
     card.className = "product-card";
     card.innerHTML = `
@@ -56,5 +55,84 @@ function updateCartCount() {
   document.getElementById("cart-count").innerText = cart.length;
 }
 
+
 displayProducts();
 updateCartCount();
+
+// --- Category Click Handler ---
+document.querySelectorAll('.category').forEach(cat => {
+  cat.addEventListener('click', function() {
+    alert('Coming soon!');
+  });
+});
+
+// --- Search Functionality ---
+const searchInput = document.getElementById('searchInput');
+searchInput.addEventListener('input', function() {
+  const query = this.value.trim().toLowerCase();
+  if (query === "") {
+    displayProducts();
+    return;
+  }
+  const filtered = products.filter(product =>
+    product.name.toLowerCase().includes(query)
+  );
+  displayProducts(filtered);
+  if (filtered.length === 1 && query.length > 0) {
+    // Pop up the product if exact match
+    alert(`Product found: ${filtered[0].name} (₹${filtered[0].price})`);
+  }
+});
+
+// --- Cart Modal Logic ---
+const cartModal = document.getElementById('cartModal');
+const cartItemsDiv = document.getElementById('cartItems');
+const cartTotalDiv = document.getElementById('cartTotal');
+const closeCartModalBtn = document.getElementById('closeCartModal');
+const cartBtn = document.querySelector('.cart');
+
+cartBtn.addEventListener('click', () => {
+  renderCart();
+  cartModal.classList.add('open');
+});
+closeCartModalBtn.addEventListener('click', () => {
+  cartModal.classList.remove('open');
+});
+window.addEventListener('click', (e) => {
+  if (e.target === cartModal) {
+    cartModal.classList.remove('open');
+  }
+});
+
+function renderCart() {
+  cart = JSON.parse(localStorage.getItem('cart')) || [];
+  cartItemsDiv.innerHTML = '';
+  if (cart.length === 0) {
+    cartItemsDiv.innerHTML = '<div class="cart-empty">Your cart is empty.</div>';
+    cartTotalDiv.textContent = 'Total: ₹0';
+    return;
+  }
+  let total = 0;
+  cart.forEach((item, idx) => {
+    total += item.price;
+    const itemDiv = document.createElement('div');
+    itemDiv.className = 'cart-item';
+    itemDiv.innerHTML = `
+      <img src="${item.image}" alt="${item.name}" class="cart-item-img" />
+      <div class="cart-item-info">
+        <div class="cart-item-title">${item.name}</div>
+        <div class="cart-item-price">₹${item.price}</div>
+      </div>
+      <button class="cart-item-remove" title="Remove" onclick="removeFromCart(${idx})">&times;</button>
+    `;
+    cartItemsDiv.appendChild(itemDiv);
+  });
+  cartTotalDiv.textContent = `Total: ₹${total}`;
+}
+
+window.removeFromCart = function(idx) {
+  cart.splice(idx, 1);
+  localStorage.setItem('cart', JSON.stringify(cart));
+  updateCartCount();
+  renderCart();
+};
