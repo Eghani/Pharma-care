@@ -27,14 +27,14 @@
 }
 .cart-modal-header h2 {
   font-size: 1.3rem;
-  color: #007bff;
+  color: #222;
   font-weight: 700;
 }
 .cart-modal-close {
   background: none;
   border: none;
   font-size: 1.5rem;
-  color: #007bff;
+  color: #222;
   cursor: pointer;
 }
 .cart-items {
@@ -66,7 +66,7 @@
 .cart-item-title {
   font-size: 1rem;
   font-weight: 600;
-  color: #007bff;
+  color: #222;
 }
 .cart-item-price {
   font-size: 0.95rem;
@@ -92,7 +92,7 @@
 .cart-total {
   font-size: 1.1rem;
   font-weight: 700;
-  color: #007bff;
+  color: #222;
   margin-bottom: 10px;
 }
 .cart-empty {
