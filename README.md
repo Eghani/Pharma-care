@@ -38,3 +38,9 @@ Ehteshamul Ghani
 
 ---
 © 2025 PharmaCare. All rights reserved.
+
+---
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
