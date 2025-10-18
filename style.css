@@ -2,14 +2,13 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: "Segoe UI", sans-serif;
 }
 
 body {
   background-color: #fff;
   color: #222;
 }
-
 
 /* Navbar */
 .navbar {
@@ -79,7 +78,22 @@ body {
   font-weight: 700;
   box-shadow: none;
 }
-
+.navlinks {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  margin-right: 1.5em;
+}
+.navlinks a {
+  text-decoration: none;
+  color: #222;
+  font-weight: 600;
+  margin-left: 1.7em;
+  transition: color 0.2s;
+}
+.navlinks a:hover {
+  text-decoration: underline;
+}
 
 /* Hero Section */
 .hero {
@@ -134,7 +148,6 @@ body {
   box-shadow: 0 2px 12px #007bff33;
 }
 
-
 /* Categories */
 .categories {
   padding: 32px 0 24px 0;
@@ -180,7 +193,6 @@ body {
   box-shadow: none;
 }
 
-
 /* Featured Products */
 .featured-products {
   padding: 36px 0 24px 0;
@@ -224,7 +236,6 @@ body {
 .product-card:hover {
   transform: translateY(-7px) scale(1.03);
   box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
-
 }
 
 .product-img {
@@ -267,7 +278,6 @@ body {
   box-shadow: none;
   transform: scale(1.06);
 }
-
 
 /* Healthy Message */
 .healthy-message {
